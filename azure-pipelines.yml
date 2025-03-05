@@ -1,0 +1,21 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+- job: BuildAndPushDockerImage
+  displayName: 'Build and Push Docker Image'
+  steps:
+  - task: Docker@2
+    inputs:
+      containerRegistry: 'dockerconnection' 
+      repository: 'jamilnayeem321/netwithdatabase'
+      command: 'buildAndPush'
+      Dockerfile: '**/Dockerfile'
+      tags: 'latest'
