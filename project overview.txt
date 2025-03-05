@@ -1,3 +1,2 @@
 Dotnet6 porject with MongoDB database. Dockerized , hosted in aws ec2 linux server.
 Built image is pushed to dockerhub. pulled the image from the linux server manually with command line.
-http://18.202.251.236:81/swagger/index.html
